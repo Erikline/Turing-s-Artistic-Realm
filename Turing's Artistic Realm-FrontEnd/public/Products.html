@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic-com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&family=Bellefair&family=Barlow:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Turing's Artistic Realm</title>
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+</head>
+<body class="tech">
+    <div id="loading">
+        <img src="./assets/loading.gif" alt="loading">
+        <p id="loading-persentage">0%</p>
+    </div>
+    <a href="#main" class="skip-to-content">Skip to content</a>
+    <header class="primary-header flex">
+        <div>
+            <img src="./assets/shared/logo.svg" alt="space tourism logo" class="logo" />
+        </div>
+        <button class="mobile-nav-toggle" aria-controls="primary-navigation">
+            <span class="sr-only" aria-expanded="false">Menu</span>
+        </button>
+        <nav>
+            <ul id="primary-navigation" data-visible="false" class="primary-navigation underline-indicators flex">
+                <li><a href="Home.html">Home</a></li>
+                <li><a href="Introduction.html">Introduction</a></li>
+                <li class="active"><a href="Products.html">Products</a></li>
+                <li><a href="Crew.html">Crew</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main" >
+        <div class="chat-container" >
+            <div class="chat-box " style="margin-top: 300px;">
+                <div class="model-selector">
+                    <select id="modelSelect" class="ff-sans-cond">
+                        <option value="T2I">T2I</option>
+                        <option value="I2I">I2I</option>
+                        <option value="I23D">I23D</option>
+                        <option value="I2V">I2V</option>
+                    </select>
+                </div>
+                <div id="chat-messages" class="chat-messages" style="height: 600px;"></div>
+                
+                <div id="model-container" style="display: none;">
+                    <model-viewer id="model-viewer" ar ar-modes="webxr scene-viewer quick-look" environment-image="neutral" auto-rotate camera-controls>
+                    </model-viewer>
+                </div>
+
+                <div class="input-container">
+                    <div id="uploaded-image-preview" class="uploaded-image-preview">
+                        <div id="image-container" class="image-container"></div>
+                    </div>
+                    <div class="chat-input-wrapper">
+                        <input type="text" id="chatInput" placeholder="输入消息" />
+                        <button id="sendButton">发送</button>
+                        <label for="fileInput" class="upload-button">
+                            <img src="./assets/upload.png" alt="Upload Icon">
+                        </label>
+                        <input type="file" id="fileInput" style="display: none;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <canvas class="tech-webgl"></canvas>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="./navigation.js" defer></script>
+    <script src="./tabs.js" defer></script>
+    <script type="module" src="./Products.js" defer></script>
+</body>
+</html>

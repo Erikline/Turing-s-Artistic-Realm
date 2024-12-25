@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&family=Bellefair&family=Barlow:wght@400;700&display=swap"
+    rel="stylesheet" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="./style.css" />
+
+  <title>Turing's Artistic Realm</title>
+
+  <!-- Custom JS -->
+  <script src="./navigation.js" defer></script>
+  <script src="./tabs.js" defer></script>
+  <script type="module" src="./Introduction.js" defer></script>
+  <script src="./dynamicTitle.js" defer></script> <!-- Add this line -->
+</head>
+
+<body class="destination">
+  <div id="loading"><img src="./assets/loading.gif" alt="loading">
+    <p id="loading-persentage">0%</p>
+  </div>
+  <a href="#main" class="skip-to-content">Skip to content</a>
+  <header class="primary-header flex">
+    <div>
+      <img src="./assets/shared/logo.svg" alt="space tourism logo" class="logo" />
+    </div>
+
+    <button class="mobile-nav-toggle" aria-controls="primary-navigation">
+      <span class="sr-only" aria-expanded="false"> Menu </span>
+    </button>
+
+    <nav>
+      <ul id="primary-navigation" data-visible="false" class="primary-navigation underline-indicators flex">
+        <li>
+          <a class="ff-sans-cond uppercase text-white letter-spaceing-2" href="Home.html"><span
+              aria-hidden="true">00</span>Home</a>
+        </li>
+        <li class="active">
+          <a class="ff-sans-cond uppercase text-white letter-spaceing-2" href="Introduction.html"><span
+              aria-hidden="true">01</span>Introduction</a>
+        </li>
+        <li>
+          <a class="ff-sans-cond uppercase text-white letter-spaceing-2" href="Products.html"><span
+              aria-hidden="true">02</span>Products</a>
+        </li>
+        <li>
+          <a class="ff-sans-cond uppercase text-white letter-spaceing-2" href="Crew.html"><span
+              aria-hidden="true">03</span>Crew</a>
+        </li>
+      </ul>
+    </nav>
+  </nav>
+  </header>
+
+  <main id="main" class="grid-container grid-container--destination flow">
+
+    <h1 class="numbered-title"><span aria-hidden="true">01</span>Pick your favorite</h1>
+
+    <picture id="moon-image">
+      <img src="assets/destination/文生图.png" alt="the moon">
+    </picture>
+
+    <picture hidden id="mars-image">
+      <img src="assets/destination/图生图.png" alt="the planet mars">
+    </picture>
+
+    <picture hidden id="europa-image">
+      <img src="assets/destination/图生3D.png" alt="the planet europa">
+    </picture>
+
+    <picture hidden id="titan-image">
+      <img src="assets/destination/图生视频.png" alt="the planet titan">
+    </picture>
+
+    <div class="tab-list underline-indicators flex" role="tablist" aria-label="destination list">
+      <button id="tab-t2i" aria-selected="true" role="tab" aria-controls="moon-tab"
+        class="uppercase ff-sans-cond text-accent letter-spacing-2" tabindex="0" data-image="moon-image">T2I</button>
+      <button id="tab-i2i" aria-selected="false" role="tab" aria-controls="mars-tab"
+        class="uppercase ff-sans-cond text-accent letter-spacing-2" tabindex="-1" data-image="mars-image">I2I</button>
+      <button id="tab-t23d" aria-selected="false" role="tab" aria-controls="europa-tab"
+        class="uppercase ff-sans-cond text-accent letter-spacing-2" tabindex="-1"
+        data-image="europa-image">I23D</button>
+      <button id="tab-i23d" aria-selected="false" role="tab" aria-controls="titan-tab"
+        class="uppercase ff-sans-cond text-accent letter-spacing-2" tabindex="-1"
+        data-image="titan-image">I2V</button>
+    </div>
+
+    <!-- Moon -->
+    <article id="moon-tab" class="destination-info flow" role="tabpanel">
+      <h2 class="fs-800 uppercase ff-serif">T2I</h2>
+
+      <p>
+        Doubao's text to image feature is super amazing! Enter a text description and it instantly generates a high-quality image. Whether it's a fantasy, sci-fi, or vintage scene, it can accurately render it with delicate strokes and realistic light and shadow. Styles and details can also be customised to meet the needs of creation, design and daily sharing, making it easy to visualise your imagination.
+      </p>
+
+      <div class="destination-meta flex">
+        <div>
+          <h3 class="text-accent fs-200 uppercase">
+            Source
+          </h3>
+          <p class="fs-500 ff-serif uppercase">
+            Doubao
+          </p>
+        </div>
+
+        <div>
+          <h3 class="text-accent fs-200 uppercase">
+            Generated Time
+          </h3>
+          <p class="fs-500 ff-serif uppercase">
+            1.3 seconds
+          </p>
+        </div>
+      </div>
+    </article>
+
+    <!-- Mars -->
+    <article hidden id="mars-tab" class="destination-info flow" role="tabpanel">
+      <h2 class="fs-800 uppercase ff-serif">I2I</h2>
+
+      <p>
+        Doubao's Image Generate Image feature is incredibly useful! It takes an existing image and transforms it into various styles based on your needs. For instance, it can restore and enhance old, blurred photos, or convert ordinary photos into retro oil paintings with delicate brush strokes. This tool helps designers quickly create material variants and assists photography enthusiasts with creative post-processing. With simple operations, it brings new life to images, unlocking unlimited visual possibilities.
+      </p>
+
+      <div class="destination-meta flex">
+        <div>
+          <h3 class="text-accent fs-200 uppercase">
+            Source
+          </h3>
+          <p class="fs-500 ff-serif uppercase">
+            Doubao
+          </p>
+        </div>
+
+        <div>
+          <h3 class="text-accent fs-200 uppercase">
+            Generated Time
+          </h3>
+          <p class="fs-500 ff-serif uppercase">
+            2.1 seconds
+          </p>
+        </div>
+      </div>
+    </article>
+
+    <!-- I23D -->
+    <article hidden id="europa-tab" class="destination-info flow" role="tabpanel">
+      <h2 class="fs-800 uppercase ff-serif">I23D</h2>
+
+      <p>
+        Stability.AI excels in generating 3D models from 2D images. Users upload a 2D image, and advanced algorithms create a lifelike 3D model with rich details and realistic lighting. This technology improves efficiency in 3D modeling, animation, and virtual scene building, allowing creators to easily transition from 2D to 3D and unlock unlimited creative possibilities.
+      </p>
+
+      <div class="destination-meta flex">
+        <div>
+          <h3 class="text-accent fs-200 uppercase">
+            Source
+          </h3>
+          <p class="fs-500 ff-serif uppercase">
+            Stability.AI
+          </p>
+        </div>
+
+        <div>
+          <h3 class="text-accent fs-200 uppercase">
+            Generated Time
+          </h3>
+          <p class="fs-500 ff-serif uppercase">
+            5.7 seconds
+          </p>
+        </div>
+      </div>
+    </article>
+
+    <!-- I2V -->
+    <article hidden id="titan-tab" class="destination-info flow" role="tabpanel">
+      <h2 class="fs-800 uppercase ff-serif">I2V</h2>
+
+      <p>
+        Stability.AI's image-to-video feature is truly remarkable. Users upload an image, and the technology quickly generates a corresponding video. It captures scene details precisely, features smooth character movements, and offers realistic lighting, making it a valuable tool for film, advertising, and social media content creation. This technology stimulates creativity, shortens the production cycle, and allows exciting videos to be generated quickly from visual inputs.
+      </p>
+
+      <div class="destination-meta flex">
+        <div>
+          <h3 class="text-accent fs-200 uppercase">
+            Source
+          </h3>
+          <p class="fs-500 ff-serif uppercase">
+            Stability.AI
+          </p>
+        </div>
+
+        <div>
+          <h3 class="text-accent fs-200 uppercase">
+            Generated Time
+          </h3>
+          <p class="fs-500 ff-serif uppercase">
+            30 seconds
+          </p>
+        </div>
+      </div>
+    </article>
+
+  </main>
+
+  <canvas class="destination-webgl"></canvas>
+  <canvas class="planet-webgl"></canvas>
+
+</body>
+
+</html>

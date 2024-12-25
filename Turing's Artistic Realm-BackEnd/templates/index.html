@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 图像和视频生成</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        form {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        input[type="file"], input[type="text"] {
+            width: 100%;
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        #image-result img, #video-result video, #3d-result model-viewer {
+            max-width: 100%;
+            margin-top: 20px;
+        }
+    </style>
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+</head>
+<body>
+    <h1>AI 图像和视频生成</h1>
+
+    <form id="text-to-image-form">
+        <h2>文本生成图片</h2>
+        <label for="text">输入文本：</label>
+        <input type="text" name="text" required>
+        <input type="submit" value="生成图片">
+    </form>
+    <div id="text-image-result"></div>
+
+    <form id="text-image-to-image-form" enctype="multipart/form-data">
+        <h2>文本+图片生成图片</h2>
+        <label for="text">输入文本：</label>
+        <input type="text" name="text" required>
+        <label for="image">选择图片：</label>
+        <input type="file" name="image" accept="image/*" required>
+        <input type="submit" value="生成图片">
+    </form>
+    <div id="text-image-result"></div>
+
+    <form id="image-to-3d-form" enctype="multipart/form-data">
+        <h2>图片生成3D模型</h2>
+        <label for="image">选择图片：</label>
+        <input type="file" name="image" accept="image/*" required>
+        <input type="submit" value="生成3D模型">
+    </form>
+    <div id="3d-result"></div>
+
+    <form id="text-to-video-form">
+        <h2>文本生成视频</h2>
+        <label for="text">输入文本：</label>
+        <input type="text" name="text" required>
+        <input type="submit" value="生成视频">
+    </form>
+    <div id="text-video-result"></div>
+
+    <script>
+        document.getElementById('text-to-image-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const formData = new FormData(this);
+            fetch('/text_to_image', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.image_url) {
+                    document.getElementById('text-image-result').innerHTML = `<img src="${data.image_url}" alt="Generated Image">`;
+                } else {
+                    document.getElementById('text-image-result').innerHTML = `<p>${data.error}</p>`;
+                }
+            })
+            .catch(error => console.error('Error:', error));
+        });
+
+        document.getElementById('text-image-to-image-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const formData = new FormData(this);
+            fetch('/text_image_to_image', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.image_url) {
+                    document.getElementById('text-image-result').innerHTML = `<img src="${data.image_url}" alt="Generated Image">`;
+                } else {
+                    document.getElementById('text-image-result').innerHTML = `<p>${data.error}</p>`;
+                }
+            })
+            .catch(error => console.error('Error:', error));
+        });
+
+        document.getElementById('image-to-3d-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const formData = new FormData(this);
+            fetch('/image_to_3d', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.model_url) {
+                    document.getElementById('3d-result').innerHTML = `<model-viewer src="${data.model_url}" ar ar-modes="webxr scene-viewer quick-look" environment-image="neutral" auto-rotate camera-controls></model-viewer>`;
+                } else {
+                    document.getElementById('3d-result').innerHTML = `<p>${data.error}</p>`;
+                }
+            })
+            .catch(error => console.error('Error:', error));
+        });
+
+        document.getElementById('text-to-video-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const formData = new FormData(this);
+            fetch('/text_to_video', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.generation_id) {
+                    fetch(`/get_video/${data.generation_id}`)
+                    .then(response => response.json())
+                    .then(videoData => {
+                        if (videoData.video_url) {
+                            document.getElementById('text-video-result').innerHTML = `<video controls><source src="${videoData.video_url}" type="video/mp4">Your browser does not support the video tag.</video>`;
+                        } else {
+                            document.getElementById('text-video-result').innerHTML = `<p>${videoData.message}</p>`;
+                        }
+                    });
+                } else {
+                    document.getElementById('text-video-result').innerHTML = `<p>${data.error}</p>`;
+                }
+            })
+            .catch(error => console.error('Error:', error));
+        });
+    </script>
+</body>
+</html>

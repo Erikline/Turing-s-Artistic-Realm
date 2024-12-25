@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&family=Bellefair&family=Barlow:wght@400;700&display=swap"
+    rel="stylesheet" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="./style.css" />
+
+  <title>Turing's Artistic Realm</title>
+
+  <!-- Custom JS -->
+  <script src="./navigation.js" defer></script>
+  <script src="./tabs.js" defer></script>
+  <script type="module" src="./Crew.js" defer></script>
+
+</head>
+
+<body class="crew">
+  <div id="loading"><img src="./assets/loading.gif" alt="loading">
+    <p id="loading-persentage">0%</p>
+  </div>
+  <a href="#main" class="skip-to-content">Skip to content</a>
+  <header class="primary-header flex">
+    <div>
+      <img src="./assets/shared/logo.svg" alt="space tourism logo" class="logo" />
+    </div>
+
+    <button class="mobile-nav-toggle" aria-controls="primary-navigation">
+      <span class="sr-only" aria-expanded="false"> Menu </span>
+    </button>
+
+    <nav>
+      <ul id="primary-navigation" data-visible="false" class="primary-navigation underline-indicators flex">
+        <li>
+          <a class="ff-sans-cond uppercase text-white letter-spaceing-2" href="Home.html"><span
+              aria-hidden="true">00</span>Home</a>
+        </li>
+        <li>
+          <a class="ff-sans-cond uppercase text-white letter-spaceing-2" href="Introduction.html"><span
+              aria-hidden="true">01</span>Introduction</a>
+        </li>
+        <li >
+          <a class="ff-sans-cond uppercase text-white letter-spaceing-2" href="Products.html"><span
+              aria-hidden="true">02</span>Products</a>
+        </li>
+        <li class="active">
+          <a class="ff-sans-cond uppercase text-white letter-spaceing-2" href="Crew.html"><span
+              aria-hidden="true">03</span>Crew</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main" class="grid-container grid-container--crew flow">
+    <h1 class="numbered-title"><span aria-hidden="true">03</span>Meet your crew</h1>
+
+    <div class="dot-indicators flex" role="tablist" aria-label="crew memeber list">
+      <button aria-selected="true" role="tab" aria-controls="commander-tab" tabindex="0"
+        data-image="commander-image"><span class="sr-only">The commander</span></button>
+      <button aria-selected="false" role="tab" aria-controls="pilot-tab" tabindex="-1" data-image="pilot-image"><span
+        class="sr-only">The pilot</span></button>
+      <button aria-selected="false" role="tab" aria-controls="mission-tab" tabindex="-1"
+      data-image="mission-image"><span class="sr-only">The mission specialist</span></button>
+      <button aria-selected="false" role="tab" aria-controls="engineer-tab" tabindex="-1"
+    data-image="engineer-image"><span class="sr-only">The crew engineer</span></button>
+     
+     
+    </div>
+
+    <!-- commander -->
+    <article id="commander-tab" class="crew-details flow" role="tabpanel">
+      <header class="flow flow--space-small">
+        <h2 class="fs-600 ff-serif uppercase">Hongyu</h2>
+        <p class="fs-700 ff-serif uppercase">Lin</p>
+      </header>
+      <p>
+        Hongyu Lin is the team leader of this ambitious project focused on integrating state-of-the-art machine learning models. A senior in the Computer Science department, he has extensive experience in deep learning, particularly with natural language processing and computer vision. With a strong background in model integration, he is responsible for managing the project’s progress, ensuring seamless collaboration among the team members, and making strategic decisions regarding the model selection and application. Outside of academics, he is passionate about artificial intelligence's impact on real-world applications, especially in healthcare and education.
+      </p>
+    </article>
+
+    <!-- pilot -->
+    <article hidden id="pilot-tab" class="crew-details flow" role="tabpanel">
+      <header class="flow flow--space-small">
+        <h2 class="fs-600 ff-serif uppercase">YuXuan</h2>
+        <p class="fs-700 ff-serif uppercase">Guo</p>
+      </header>
+      <p>
+        Yuxuan Guo is a dedicated member of the team, specializing in data engineering and model deployment. With a strong foundation in algorithms and machine learning, he is focused on preparing the data pipelines and ensuring efficient model training and testing. He is skilled in working with frameworks like TensorFlow and PyTorch and is responsible for optimizing the performance of the integrated models. He is also passionate about cloud computing and aims to explore scalable solutions for large model deployment.
+      </p>
+    </article>
+
+    <!-- mission specialist -->
+    <article hidden id="mission-tab" class="crew-details flow" role="tabpanel">
+      <header class="flow flow--space-small">
+        <h2 class="fs-600 ff-serif uppercase">Linhan</h2>
+        <p class="fs-650 ff-serif uppercase">Fang</p>
+      </header>
+      <p>
+        Linhan Fang is a talented machine learning researcher with expertise in neural networks and reinforcement learning. As a team member, she plays a crucial role in experimenting with various large models and fine-tuning them for the project’s needs. She is particularly interested in how advanced models can be adapted to new, practical applications. In her free time, she enjoys exploring the intersection of AI and robotics, envisioning future applications in autonomous systems.
+      </p>
+    </article>
+
+    <!-- engineer -->
+    <article hidden id="engineer-tab" class="crew-details flow" role="tabpanel">
+      <header class="flow flow--space-small">
+        <h2 class="fs-600 ff-serif uppercase">LinXuan</h2>
+        <p class="fs-700 ff-serif uppercase">Wan</p>
+      </header>
+      <p>
+        Linxuan Wan is an innovative software developer focused on building the front-end interface and integrating machine learning models with user-friendly applications. She is experienced in using Python and web development technologies, including Flask and Vue.js. She is responsible for ensuring the smooth interaction between the user interface and the backend models, creating an intuitive and engaging experience. Her goal is to make complex AI systems accessible to end-users through clear and functional designs.
+      </p>
+    </article>
+
+    <picture id="commander-image">
+      <img src="assets/crew/1.png" alt="Douglas Hurley">
+    </picture>
+    <picture hidden id="mission-image">
+      <img src="assets/crew/3.png" alt="Anousheh Ansari">
+    </picture>
+    <picture hidden id="pilot-image">
+      <img src="assets/crew/2.png" alt="Mark Shuttleworth">
+    </picture>
+    <picture hidden id="engineer-image">
+      <img src="assets/crew/4.png" alt="Anousheh Ansari">
+    </picture>
+
+  </main>
+
+  <canvas class="crew-webgl"></canvas>
+</body>
+
+</html>
