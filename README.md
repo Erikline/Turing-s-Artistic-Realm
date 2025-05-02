@@ -65,15 +65,6 @@
 
 本项目根据 **[Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0)** 条款进行许可。
 
-这意味着您可以自由地使用、复制、修改和分发本软件（无论是源代码还是编译后的二进制形式），用于商业或非商业目的，但前提是您需要遵守该许可证的条款。主要条件包括：
-
-*   您必须向代码的任何后续接收者提供一份 Apache License 2.0 的副本。
-*   如果您修改了文件，必须在修改的文件中携带显著的声明，说明您更改了这些文件。
-*   您必须保留原始代码中包含的所有版权、专利、商标和归属声明（不包括那些不属于源代码任何部分的声明）。
-*   如果原始作品包含一个 "NOTICE" 文本文件作为其分发的一部分，则您分发的任何衍生作品必须包含该 NOTICE 文件中包含的归属声明的可读副本（不包括那些不修改衍生作品的声明）。
-
-有关完整的权限和限制信息，请参阅项目根目录下的 [`LICENSE`](./LICENSE) 文件。
-
 ## ✨ 效果展示 / Screenshots
 ![](https://raw.githubusercontent.com/Erikline/Turing-s-Artistic-Realm/main/%E9%A6%96%E9%A1%B5.png)
 ![](https://raw.githubusercontent.com/Erikline/Turing-s-Artistic-Realm/main/%E4%BA%BA%E6%9C%BA%E4%BA%A4%E4%BA%92%E9%A1%B5.png)
