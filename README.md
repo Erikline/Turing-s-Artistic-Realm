@@ -7,15 +7,13 @@
 ## ✨ 效果展示 / Screenshots
 
 *   **[首页]**
-    ![效果图 1](docs/images/screenshot1.png)
-    *(效果图 1 的简短说明)*
+    ![效果图 1](https://github.com/Erikline/Turing-s-Artistic-Realm/blob/main/%E9%A6%96%E9%A1%B5.png)
 
 *   **[模型简介]**
-    ![效果动图 2](docs/images/demo2.gif)
-    *(效果动图 2 的简短说明)*
+    ![效果动图 2]([docs/images/demo2.gif](https://github.com/Erikline/Turing-s-Artistic-Realm/blob/main/%E4%BB%8B%E7%BB%8D%E9%A1%B5.png))
 
 *   **[人机交互界面]**
-    ![效果图 3](docs/images/screenshot3.jpg)
+    ![效果图 3]([docs/images/screenshot3.jpg](https://github.com/Erikline/Turing-s-Artistic-Realm/blob/main/%E9%A6%96%E9%A1%B5.png))
 
 ## 🚀 快速开始
 
