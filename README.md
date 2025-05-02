@@ -5,12 +5,9 @@
 后端是一个简单的 Node.js/Express 服务器，主要负责托管前端静态资源。
 
 ## ✨ 效果展示 / Screenshots
-
-    ![](https://github.com/Erikline/Turing-s-Artistic-Realm/blob/main/%E9%A6%96%E9%A1%B5.png)
-
-    ![](https://github.com/Erikline/Turing-s-Artistic-Realm/blob/main/%E4%BB%8B%E7%BB%8D%E9%A1%B5.png)
-
-    ![](https://github.com/Erikline/Turing-s-Artistic-Realm/blob/main/%E9%A6%96%E9%A1%B5.png)
+![](https://raw.githubusercontent.com/Erikline/Turing-s-Artistic-Realm/main/%E9%A6%96%E9%A1%B5.png)
+![](https://raw.githubusercontent.com/Erikline/Turing-s-Artistic-Realm/main/%E4%BB%8B%E7%BB%8D%E9%A1%B5.png)
+![](https://raw.githubusercontent.com/Erikline/Turing-s-Artistic-Realm/main/%E9%A6%96%E9%A1%B5.png)
 
 ## 🚀 快速开始
 
