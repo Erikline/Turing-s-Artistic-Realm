@@ -6,8 +6,6 @@
 
 ## ✨ 效果展示 / Screenshots
 ![](https://raw.githubusercontent.com/Erikline/Turing-s-Artistic-Realm/main/%E9%A6%96%E9%A1%B5.png)
-![](https://raw.githubusercontent.com/Erikline/Turing-s-Artistic-Realm/main/%E4%BB%8B%E7%BB%8D%E9%A1%B5.png)
-![](https://raw.githubusercontent.com/Erikline/Turing-s-Artistic-Realm/main/%E9%A6%96%E9%A1%B5.png)
 
 ## 🚀 快速开始
 
